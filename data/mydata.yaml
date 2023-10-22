@@ -1,0 +1,7 @@
+train: /root/yolo/dataset/images/train 
+val: /root/yolo/dataset/images/val
+test: /root/yolo/dataset/images/test
+# number of classes
+nc: 6
+# class names
+names: ['xuebi','meinianda','baishi','wutang','coca','fenda']
