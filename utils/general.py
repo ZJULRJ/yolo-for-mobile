@@ -329,6 +329,16 @@ def scale_coords(img1_shape, coords, img0_shape, ratio_pad=None):
     coords[:, [1, 3]] -= pad[1]  # y padding
     coords[:, :4] /= gain
     clip_coords(coords, img0_shape)
+    # gain = min(img1_shape[0] / img0_shape[0], img1_shape[1] / img0_shape[1])  # gain = old / new
+    # coords[:, :4] /= gain
+    # clip_coords(coords, img0_shape)
+    # y_scale = img1_shape[0] / img0_shape[1]
+    # x_scale = img1_shape[1] / img0_shape[0]
+    # # 调整坐标
+    # coords[:, 0] *= x_scale  # 调整xmin
+    # coords[:, 1] *= y_scale  # 调整ymin
+    # coords[:, 2] *= x_scale  # 调整xmax
+    # coords[:, 3] *= y_scale  # 调整ymax
     return coords
 
 
